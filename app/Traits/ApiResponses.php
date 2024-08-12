@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Traits;
+use GrahamCampbell\ResultType\Success;
+
+trait ApiResponses {
+
+    protected function ok($message){
+       $this->success($message,200);
+    }
+
+    protected function success($message, $statusCode = 200) {
+        return response()->json([
+            'message' => $message,
+            'status' => $statusCode
+        ],$statusCode);
+     }
+}
