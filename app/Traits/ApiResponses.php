@@ -6,7 +6,7 @@ use GrahamCampbell\ResultType\Success;
 trait ApiResponses {
 
     protected function ok($message){
-       $this->success($message,200);
+       return $this->success($message,200);
     }
 
     protected function success($message, $statusCode = 200) {

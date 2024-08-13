@@ -13,7 +13,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $users = User::factory(10)->create();
+
+        \App\Models\Ticket::factory(100)
+            ->recycle($users)
+            ->create();
 
         User::factory()->create([
             'name' => 'Test User',
